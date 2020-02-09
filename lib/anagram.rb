@@ -5,18 +5,9 @@ class Anagram
     @word = word
   end
   
-  def match(array)
-    w_word = @word.split("")
-  array.map do |word|
-    to_return = []
-    a_word = word.split("")
-    if a_word.sort == w_word.sort
-      to_return << word
-      return to_return
-    else
-      to_return.clear
-      return to_return
+  def match(word_array)
+    word_array.select do |word|
+      word.split("").sort == @word.split("").sort
     end
   end
-end
 end
